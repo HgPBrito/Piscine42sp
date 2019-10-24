@@ -46,19 +46,5 @@ int		size_of_file(char *path)
 	return (count);
 }
 
-char	*load_file(char *path)
-{
-	int		size;
-	int		file;
-	char	*buffer;
-	char	*str;
 
-	file = open(path, O_RDONLY);
-	size = size_of_file(path);
-	buffer = malloc(size);
-	read(file, buffer, size);
-	str = ft_strdup(buffer);
-	free(buffer);
-	close(file);
-	return (str);
 }
